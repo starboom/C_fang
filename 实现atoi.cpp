@@ -9,7 +9,8 @@ int my_atoi(char const *s)
 	int i = 0;
 	int n = 0;
 	tmp = s;
-	for(n = 0;n < strlen(tmp) ;n++)
+	int len = strlen(tmp);
+	for(n = 0;n < len ;n++)
 	{
 		c = *tmp++;
 		if(c >= '0' && c <= '9')
@@ -17,7 +18,8 @@ int my_atoi(char const *s)
 			i = i * 10 + (c - '0');
 		}
 		else
-			return -1;	
+			continue;
+	//	return -1;	
 	}
 	return i;
 }
